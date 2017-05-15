@@ -27,7 +27,7 @@ dependencies {
 ```
 
 ## Usage
-Regalia itself contains a few useful classes, notably the `RealmString` class which allows you to store Strings in Realm.
+Regalia itself provides usage just with Realm itself, mostly through the `Regalia` class.
 
 Other usage is defined in the individual modules README's
 

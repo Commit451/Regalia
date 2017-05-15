@@ -19,7 +19,7 @@ import io.realm.RealmObject;
  *
  * @see <a href="http://stackoverflow.com/a/30014833/895797">http://stackoverflow.com/a/30014833/895797</a>
  */
-abstract class RealmListGsonConverter<T extends RealmObject> implements JsonSerializer<RealmList<T>>,
+public abstract class RealmListGsonConverter<T extends RealmObject> implements JsonSerializer<RealmList<T>>,
         JsonDeserializer<RealmList<T>> {
 
     /**

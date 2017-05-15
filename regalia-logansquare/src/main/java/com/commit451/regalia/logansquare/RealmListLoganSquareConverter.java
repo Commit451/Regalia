@@ -18,25 +18,20 @@ import io.realm.RealmObject;
  * You can use this with RealmObjects:
  * 1. Annotated with @JsonObject
  * 2. With custom converters.
- *
- * @author Krzysztof Miemiec
  */
 public abstract class RealmListLoganSquareConverter<T extends RealmObject> implements TypeConverter<RealmList<T>> {
 
-    private Class<T> clazz;
     private TypeConverter<T> typeConverter;
     private JsonMapper<T> mapper;
 
-    public RealmListLoganSquareConverter(Class<T> clazz) {
-        this.clazz = clazz;
-    }
+    protected abstract Class<T> getObjectClass();
 
     private void init() {
         if (typeConverter == null && mapper == null) {
             try {
-                typeConverter = LoganSquare.typeConverterFor(clazz);
+                typeConverter = LoganSquare.typeConverterFor(getObjectClass());
             } catch (NoSuchTypeConverterException e) {
-                mapper = LoganSquare.mapperFor(clazz);
+                mapper = LoganSquare.mapperFor(getObjectClass());
             }
         }
     }

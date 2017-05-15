@@ -19,14 +19,14 @@ import io.realm.RealmObject;
  *
  * @see <a href="http://stackoverflow.com/a/30014833/895797">http://stackoverflow.com/a/30014833/895797</a>
  */
-abstract class GenericRealmListConverter<T extends RealmObject> implements JsonSerializer<RealmList<T>>,
+abstract class RealmListGsonConverter<T extends RealmObject> implements JsonSerializer<RealmList<T>>,
         JsonDeserializer<RealmList<T>> {
 
     /**
      * Return the type of your object, which can probably just be YourClass.class
      * @return the type
      */
-    protected abstract Type getType();
+    protected abstract Type getObjectType();
 
     @Override
     public JsonElement serialize(RealmList<T> src, Type typeOfSrc, JsonSerializationContext context) {
@@ -43,7 +43,7 @@ abstract class GenericRealmListConverter<T extends RealmObject> implements JsonS
         RealmList<T> items = new RealmList<>();
         JsonArray ja = json.getAsJsonArray();
         for (JsonElement je : ja) {
-            items.add((T) context.deserialize(je, getType()));
+            items.add((T) context.deserialize(je, getObjectType()));
         }
         return items;
     }

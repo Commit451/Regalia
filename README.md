@@ -1,7 +1,39 @@
 # Regalia
+[Realm Java](https://realm.io/docs/java/latest/) extensions and helpers.
 
 [![Build Status](https://travis-ci.org/Commit451/Regalia.svg?branch=master)](https://travis-ci.org/Commit451/Regalia) [![](https://jitpack.io/v/Commit451/Regalia.svg)](https://jitpack.io/#Commit451/Regalia)
 
+## Gradle Dependency
+Add the jitpack url to the project:
+```groovy
+allprojects {
+    repositories {
+        ...
+        maven { url "https://jitpack.io" }
+    }
+}
+```
+then, in your app `build.gradle`
+```groovy
+dependencies {
+    compile 'com.github.Commit451.Regalia:regalia:latest.version.here@aar'
+    //for gson support
+    compile 'com.github.Commit451.Regalia:regalia-gson:latest.version.here@aar'
+    //for LoganSquare support
+    compile 'com.github.Commit451.Regalia:regalia-logansquare:latest.version.here@aar'
+    //for Parceler support
+    compile 'com.github.Commit451.Regalia:regalia-parceler:latest.version.here@aar'
+}
+```
+
+## Usage
+Regalia itself contains a few useful classes, notably the `RealmString` class which allows you to store Strings in Realm.
+
+Other usage is defined in the individual modules README's
+
+- [regalia-gson](regalia-gson/)
+- [regalia-logansquare](regalia-logansquare/)
+- [regalia-parceler](regalia-parceler/)
 
 License
 --------

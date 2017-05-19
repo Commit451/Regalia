@@ -26,7 +26,7 @@ public abstract class RealmListGsonConverter<T extends RealmObject> implements J
      * Return the type of your object, which can probably just be YourClass.class
      * @return the type
      */
-    protected abstract Type getObjectType();
+    public abstract Type getObjectType();
 
     @Override
     public JsonElement serialize(RealmList<T> src, Type typeOfSrc, JsonSerializationContext context) {

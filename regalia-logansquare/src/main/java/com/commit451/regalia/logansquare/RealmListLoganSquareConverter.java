@@ -24,7 +24,7 @@ public abstract class RealmListLoganSquareConverter<T extends RealmObject> imple
     private TypeConverter<T> typeConverter;
     private JsonMapper<T> mapper;
 
-    protected abstract Class<T> getObjectClass();
+    public abstract Class<T> getObjectClass();
 
     private void init() {
         if (typeConverter == null && mapper == null) {

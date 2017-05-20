@@ -5,7 +5,7 @@ import java.lang.reflect.Type;
 public class CatListConverter extends RealmListGsonConverter<Cat> {
 
     @Override
-    protected Type getObjectType() {
+    public Type getObjectType() {
         return Cat.class;
     }
 }

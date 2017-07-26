@@ -26,7 +26,11 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'org.parceler:parceler-api:1.1.8'
+
+    compile 'org.parceler:parceler-api:1.1.9'
+
+    provided "io.realm:realm-android-library:$realmVersion"
+
     compile project(':regalia')
 }
 

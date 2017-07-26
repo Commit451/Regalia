@@ -26,9 +26,16 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+
     compile "com.bluelinelabs:logansquare:1.3.7"
+
+    provided "io.realm:realm-android-library:$realmVersion"
+
     compile project(':regalia')
-    testCompile 'junit:junit:4.12'
+
+    testCompile project(':test')
+
+    testAnnotationProcessor 'com.bluelinelabs:logansquare-compiler:1.3.7'
 }
 
 apply from: 'https://raw.githubusercontent.com/Commit451/gradle-android-javadocs/1.0.0/gradle-android-javadocs.gradle'

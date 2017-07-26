@@ -1,1 +1,1 @@
-include ':app', ':regalia', ':regalia-gson', ':regalia-parceler', ':regalia-logansquare', ':regalia-moshi'
+include ':app', ':regalia', ':regalia-gson', ':regalia-parceler', ':regalia-logansquare', ':regalia-moshi', ':test'

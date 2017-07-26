@@ -12,11 +12,15 @@ import java.io.IOException;
 import io.realm.RealmList;
 import io.realm.RealmObject;
 
-public class RealmListAdapter<T extends RealmObject> extends JsonAdapter<RealmList<T>> {
+/**
+ * Derived from this example:
+ * https://github.com/square/moshi/blob/master/moshi/src/main/java/com/squareup/moshi/CollectionJsonAdapter.java
+ */
+class RealmListAdapter<T extends RealmObject> extends JsonAdapter<RealmList<T>> {
 
     private JsonAdapter<T> elementAdapter;
 
-    public RealmListAdapter(JsonAdapter<T> elementAdapter) {
+    RealmListAdapter(JsonAdapter<T> elementAdapter) {
         this.elementAdapter = elementAdapter;
     }
 
@@ -34,7 +38,7 @@ public class RealmListAdapter<T extends RealmObject> extends JsonAdapter<RealmLi
     public RealmList<T> fromJson(@NonNull JsonReader reader) throws IOException {
         RealmList<T> result = new RealmList<>();
         reader.beginArray();
-        while(reader.hasNext()) {
+        while (reader.hasNext()) {
             result.add(elementAdapter.fromJson(reader));
         }
         reader.endArray();

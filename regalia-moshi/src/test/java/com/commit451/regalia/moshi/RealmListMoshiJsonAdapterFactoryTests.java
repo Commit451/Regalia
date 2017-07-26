@@ -13,8 +13,8 @@ import org.junit.Test;
  */
 public class RealmListMoshiJsonAdapterFactoryTests {
 
-    static Moshi moshi = new Moshi.Builder()
-            .add(new RealmListMoshiJsonAdapterFactory())
+    private static Moshi moshi = new Moshi.Builder()
+            .add(new RealmListJsonAdapterFactory())
             .build();
 
     @Test
@@ -24,5 +24,6 @@ public class RealmListMoshiJsonAdapterFactoryTests {
         Cat cat = jsonAdapter.fromJson(json);
         Assert.assertNotNull(cat);
         Assert.assertNotNull(cat.name);
+        Assert.assertNotNull(cat.friends);
     }
 }

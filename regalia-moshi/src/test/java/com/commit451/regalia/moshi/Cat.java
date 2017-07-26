@@ -8,7 +8,6 @@ import io.realm.RealmObject;
 public class Cat extends RealmObject {
 
     String name;
-    @RealmListMoshi
     RealmList<Cat> friends;
 
     public List<Cat> getFriends() {

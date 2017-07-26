@@ -16,13 +16,15 @@ allprojects {
 then, in your app `build.gradle`
 ```groovy
 dependencies {
-    compile 'com.github.Commit451.Regalia:regalia:latest.version.here@aar'
+    compile "com.github.Commit451.Regalia:regalia:latest.version.here"
     //for gson support
-    compile 'com.github.Commit451.Regalia:regalia-gson:latest.version.here@aar'
+    compile "com.github.Commit451.Regalia:regalia-gson:latest.version.here"
     //for LoganSquare support
-    compile 'com.github.Commit451.Regalia:regalia-logansquare:latest.version.here@aar'
+    compile "com.github.Commit451.Regalia:regalia-logansquare:latest.version.here"
+    //for Moshi support
+    compile "com.github.Commit451.Regalia:regalia-moshi:latest.version.here"
     //for Parceler support
-    compile 'com.github.Commit451.Regalia:regalia-parceler:latest.version.here@aar'
+    compile "com.github.Commit451.Regalia:regalia-parceler:latest.version.here"
 }
 ```
 
@@ -33,6 +35,7 @@ Other usage is defined in the individual modules README's
 
 - [regalia-gson](regalia-gson/)
 - [regalia-logansquare](regalia-logansquare/)
+- [regalia-moshi](regalia-moshi/)
 - [regalia-parceler](regalia-parceler/)
 
 License

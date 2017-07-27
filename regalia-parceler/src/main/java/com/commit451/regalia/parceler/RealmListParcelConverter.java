@@ -10,9 +10,8 @@ import io.realm.RealmList;
 import io.realm.RealmObject;
 
 /**
- * Parceler doesn’t know how to handle a  RealmList in the default setup. You have to provide a
- * custom ParcelConverter to make it work. I wrote a RealmListParcelConverter which works with any
- * RealmList, as long as the items are also annotated with @Parcel, i.e. they also use Parceler.
+ * RealmListParcelConverter, works with any RealmList, as long as the items are also annotated with
+ * {@code @Parcel}, i.e. they also use Parceler.
  *
  * @see <a href="https://nullpointer.wtf/android/using-retrofit-realm-parceler/">https://nullpointer.wtf/android/using-retrofit-realm-parceler/</a>
  */
@@ -34,11 +33,14 @@ public class RealmListParcelConverter implements TypeRangeParcelConverter<RealmL
     @Override
     public RealmList fromParcel(Parcel parcel) {
         int size = parcel.readInt();
-        RealmList list = new RealmList();
-        for (int i = 0; i < size; i++) {
-            Parcelable parcelable = parcel.readParcelable(getClass().getClassLoader());
-            list.add((RealmObject) Parcels.unwrap(parcelable));
+        if (size != -1) {
+            RealmList list = new RealmList();
+            for (int i = 0; i < size; i++) {
+                Parcelable parcelable = parcel.readParcelable(getClass().getClassLoader());
+                list.add((RealmObject) Parcels.unwrap(parcelable));
+            }
+            return list;
         }
-        return list;
+        return null;
     }
 }

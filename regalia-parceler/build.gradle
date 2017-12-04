@@ -25,13 +25,12 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
 
-    compile 'org.parceler:parceler-api:1.1.9'
+    api 'org.parceler:parceler-api:1.1.9'
 
-    provided "io.realm:realm-android-library:$realmVersion"
+    compileOnly "io.realm:realm-android-library:$realmVersion"
 
-    compile project(':regalia')
+    compileOnly project(':regalia')
 }
 
 apply from: 'https://raw.githubusercontent.com/Commit451/gradle-android-javadocs/1.0.0/gradle-android-javadocs.gradle'

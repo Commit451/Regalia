@@ -25,15 +25,16 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
 
-    compile 'com.google.code.gson:gson:2.8.1'
+    api 'com.google.code.gson:gson:2.8.2'
 
-    provided "io.realm:realm-android-library:$realmVersion"
+    compileOnly "io.realm:realm-android-library:$realmVersion"
 
-    compile project(':regalia')
+    compileOnly project(':regalia')
 
-    testCompile project(':test')
+    testImplementation "io.realm:realm-android-library:$realmVersion"
+
+    testImplementation project(':test')
 }
 
 apply from: 'https://raw.githubusercontent.com/Commit451/gradle-android-javadocs/1.0.0/gradle-android-javadocs.gradle'

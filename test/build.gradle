@@ -25,7 +25,7 @@ android {
 }
 
 dependencies {
-    compile 'junit:junit:4.12'
+    api 'junit:junit:4.12'
 
-    compile 'com.google.guava:guava:22.0'
+    api 'com.google.guava:guava:23.0'
 }

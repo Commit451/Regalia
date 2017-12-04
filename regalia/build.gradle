@@ -25,11 +25,9 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    api "com.android.support:support-annotations:$supportLibVersion"
 
-    compile "com.android.support:support-annotations:$supportLibVersion"
-
-    provided "io.realm:realm-android-library:$realmVersion"
+    compileOnly "io.realm:realm-android-library:$realmVersion"
 }
 
 apply from: 'https://raw.githubusercontent.com/Commit451/gradle-android-javadocs/1.0.0/gradle-android-javadocs.gradle'

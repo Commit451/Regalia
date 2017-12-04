@@ -38,6 +38,9 @@ Other usage is defined in the individual modules README's
 - [regalia-moshi](regalia-moshi/)
 - [regalia-parceler](regalia-parceler/)
 
+## Support
+Regalia supports Realm version 4.x only, older and newer versions are not guarenteed to work.
+
 License
 --------
 

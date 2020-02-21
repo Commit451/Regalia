@@ -12,16 +12,6 @@ import java.io.IOException
  * https://github.com/square/moshi/blob/master/moshi/src/main/java/com/squareup/moshi/CollectionJsonAdapter.java
  */
 internal class RealmListMoshiConverter<T : RealmObject?>(private val elementAdapter: JsonAdapter<T>) : JsonAdapter<RealmList<T>>() {
-    @Throws(IOException::class)
-    override fun toJson(writer: JsonWriter, value: RealmList<T>?) {
-        writer.beginArray()
-        value?.forEach {
-            elementAdapter.toJson(writer, it)
-        }
-        writer.endArray()
-    }
-
-    @Throws(IOException::class)
     override fun fromJson(reader: JsonReader): RealmList<T>? {
         val result = RealmList<T>()
         reader.beginArray()
@@ -31,5 +21,14 @@ internal class RealmListMoshiConverter<T : RealmObject?>(private val elementAdap
         reader.endArray()
         return result
     }
+
+    override fun toJson(writer: JsonWriter, value: RealmList<T>?) {
+        writer.beginArray()
+        value?.forEach {
+            elementAdapter.toJson(writer, it)
+        }
+        writer.endArray()
+    }
+
 
 }

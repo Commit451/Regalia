@@ -2,6 +2,7 @@ package com.commit451.regalia.moshi
 
 import com.commit451.regalia.test.TestUtil.getFileText
 import com.squareup.moshi.Moshi
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import org.junit.Assert
 import org.junit.Test
 
@@ -22,6 +23,7 @@ class RealmListJsonAdapterFactoryTests {
 
     companion object {
         private val moshi = Moshi.Builder()
+                .add(KotlinJsonAdapterFactory())
                 .add(RealmListJsonAdapterFactory())
                 .build()
     }

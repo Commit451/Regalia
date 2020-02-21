@@ -5,6 +5,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import com.commit451.regalia.moshi.RealmListJsonAdapterFactory
+import com.commit451.regalia.moshi.RegaliaMoshi
 import com.commit451.regalia.sample.TestApi
 import com.crazylegend.kotlinextensions.coroutines.makeApiCallLiveData
 import com.crazylegend.kotlinextensions.retrofit.RetrofitClient
@@ -40,12 +41,8 @@ class TestAVM(application: Application) : AndroidViewModel(application) {
 
 
     private val retrofit by lazy {
-        val moshi = Moshi.Builder()
-                .add(RealmListJsonAdapterFactory())
-                .build()
-
         RetrofitClient.customInstance(context = application, baseUrl = TestApi.API2, enableInterceptor = true){
-            addConverterFactory(MoshiConverterFactory.create(moshi))
+            addConverterFactory(RegaliaMoshi.moshiConverterFactory)
             this
         }?.create<TestApi>()
     }

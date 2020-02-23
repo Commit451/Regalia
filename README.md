@@ -39,7 +39,7 @@ Other usage is defined in the individual modules README's
 - [regalia-parceler](regalia-parceler/)
 
 ## Support
-Regalia supports Realm version 4.x only, older and newer versions are not guarenteed to work.
+Regalia supports Realm's latest version 7.0.0-beta.
 
 License
 --------

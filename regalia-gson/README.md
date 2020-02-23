@@ -23,3 +23,13 @@ Gson gson = new GsonBuilder()
 //make sure this is done for all gson access throughout the app
 ```
 Make sure to do this for each of your possible `RealmList` types.
+
+
+If you're using Retrofit
+```
+addConverterFactory(realmGsonConverterFactory(My::class.java, You::class.java))
+```
+
+You can check out few extensions that are available
+
+- [Extensions](src/main/java/com/commit451/regalia/gson/Extensions.kt)

@@ -12,6 +12,8 @@ import org.parceler.TypeRangeParcelConverter
  * `@Parcel`, i.e. they also use Parceler.
  *
  * @see [https://nullpointer.wtf/android/using-retrofit-realm-parceler/](https://nullpointer.wtf/android/using-retrofit-realm-parceler/)
+ *
+ * You can use [Parcelize], you don't have to use this, see the example
  */
 class RealmListParcelConverter : TypeRangeParcelConverter<RealmList<out RealmObject>?, RealmList<out RealmObject?>?> {
     override fun toParcel(input: RealmList<out RealmObject>?, parcel: Parcel) {

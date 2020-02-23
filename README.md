@@ -1,7 +1,8 @@
 # Regalia
 [Realm Java](https://realm.io/docs/java/latest/) extensions and helpers.
 
-[![Build Status](https://travis-ci.org/Commit451/Regalia.svg?branch=master)](https://travis-ci.org/Commit451/Regalia) [![](https://jitpack.io/v/Commit451/Regalia.svg)](https://jitpack.io/#Commit451/Regalia)
+[![Build Status](https://travis-ci.org/Commit451/Regalia.svg?branch=master)](https://travis-ci.org/Commit451/Regalia) [![](https://jitpack.io/v/CraZyLegenD/Regalia.svg)](https://jitpack.io/#CraZyLegenD/Regalia)
+
 
 ## Gradle Dependency
 Add the jitpack url to the project:
@@ -18,13 +19,13 @@ then, in your app `build.gradle`
 dependencies {
     compile "com.github.Commit451.Regalia:regalia:latest.version.here"
     //for gson support
-    compile "com.github.Commit451.Regalia:regalia-gson:latest.version.here"
+    implementation 'com.github.CraZyLegenD.Regalia:regalia-gson:latest-version'
     //for LoganSquare support
-    compile "com.github.Commit451.Regalia:regalia-logansquare:latest.version.here"
+    implementation 'com.github.CraZyLegenD.Regalia:regalia-logansquare:latest-version'
     //for Moshi support
-    compile "com.github.Commit451.Regalia:regalia-moshi:latest.version.here"
+    implementation 'com.github.CraZyLegenD.Regalia:regalia-moshi:latest-version'
     //for Parceler support
-    compile "com.github.Commit451.Regalia:regalia-parceler:latest.version.here"
+    implementation 'com.github.CraZyLegenD.Regalia:regalia-parceler:latest-version'
 }
 ```
 

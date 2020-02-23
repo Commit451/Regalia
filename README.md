@@ -1,5 +1,5 @@
 # Regalia
-[Realm Java](https://realm.io/docs/java/latest/) extensions and helpers.
+[Realm Java](https://realm.io/docs/java/latest/) extensions and helpers for working with Realm using Kotlin.
 
 [![Build Status](https://travis-ci.org/Commit451/Regalia.svg?branch=master)](https://travis-ci.org/Commit451/Regalia) [![](https://jitpack.io/v/CraZyLegenD/Regalia.svg)](https://jitpack.io/#CraZyLegenD/Regalia)
 

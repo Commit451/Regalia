@@ -4,6 +4,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
+import com.commit451.regalia.gson.realmGsonConverterFactory
 import com.commit451.regalia.moshi.RealmListJsonAdapterFactory
 import com.commit451.regalia.moshi.RegaliaMoshi
 import com.commit451.regalia.sample.TestApi
@@ -13,6 +14,7 @@ import com.crazylegend.kotlinextensions.retrofit.RetrofitResult
 import com.commit451.regalia.sample.adapter.TestModel
 import com.commit451.regalia.sample.adapter.TestModel2
 import com.squareup.moshi.Moshi
+import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.create
 
@@ -40,9 +42,17 @@ class TestAVM(application: Application) : AndroidViewModel(application) {
     }
 
 
-    private val retrofit by lazy {
+    private val retrofit2 by lazy {
         RetrofitClient.customInstance(context = application, baseUrl = TestApi.API2, enableInterceptor = true){
             addConverterFactory(RegaliaMoshi.moshiConverterFactory)
+            this
+        }?.create<TestApi>()
+    }
+
+
+    private val retrofit by lazy {
+        RetrofitClient.customInstance(context = application, baseUrl = TestApi.API2, enableInterceptor = true){
+            addConverterFactory(realmGsonConverterFactory(TestModel::class.java))
             this
         }?.create<TestApi>()
     }

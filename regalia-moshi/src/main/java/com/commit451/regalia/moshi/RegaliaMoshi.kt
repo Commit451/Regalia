@@ -12,6 +12,7 @@ object RegaliaMoshi {
 
     /**
      * You can use it as
+     * It depends on 'com.squareup.moshi:moshi-kotlin:1.9.2' and 'com.squareup.retrofit2:converter-moshi:2.7.1'
      * Retrofit.Builder .addConverterFactory(moshiConverterFactory)
      */
     val moshiConverterFactory by lazy {

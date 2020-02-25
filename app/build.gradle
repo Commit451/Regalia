@@ -49,11 +49,11 @@ dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation "androidx.recyclerview:recyclerview:1.1.0"
-    implementation 'com.google.android.material:material:1.2.0-alpha04'
+    implementation 'com.google.android.material:material:1.2.0-alpha05'
 
     implementation project(':regalia-moshi')
     implementation project(':regalia-gson')
-    implementation 'com.github.CraZyLegenD:Set-Of-Useful-Kotlin-Extensions-and-Helpers:1.0.89.21'
+    implementation 'com.github.CraZyLegenD:Set-Of-Useful-Kotlin-Extensions-and-Helpers:1.0.89.22'
     implementation 'com.squareup.okhttp3:logging-interceptor:4.4.0'
     implementation 'com.squareup.retrofit2:retrofit:2.7.1'
 

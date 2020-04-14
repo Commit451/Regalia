@@ -17,7 +17,7 @@ allprojects {
 then, in your app `build.gradle`
 ```groovy
 dependencies {
-    compile "com.github.Commit451.Regalia:regalia:latest.version.here"
+    implementation 'com.github.CraZyLegenD.Regalia:latest-version'
     //for gson support
     implementation 'com.github.CraZyLegenD.Regalia:regalia-gson:latest-version'
     //for LoganSquare support
@@ -41,6 +41,8 @@ Other usage is defined in the individual modules README's
 
 ## Support
 Regalia supports Realm's latest version 7.0.0-beta.
+
+Based on [Regalia Java](https://github.com/Commit451/Regalia)
 
 License
 --------

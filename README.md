@@ -1,7 +1,7 @@
 # Regalia
 [Realm Java](https://realm.io/docs/java/latest/) extensions and helpers for working with Realm using Kotlin.
 
-[![Build Status](https://travis-ci.org/Commit451/Regalia.svg?branch=master)](https://travis-ci.org/Commit451/Regalia) [![](https://jitpack.io/v/CraZyLegenD/Regalia.svg)](https://jitpack.io/#CraZyLegenD/Regalia)
+[![](https://jitpack.io/v/CraZyLegenD/Regalia.svg)](https://jitpack.io/#CraZyLegenD/Regalia)
 
 
 ## Gradle Dependency
@@ -40,7 +40,7 @@ Other usage is defined in the individual modules README's
 - [regalia-parceler](regalia-parceler/)
 
 ## Support
-Regalia supports Realm's latest version 7.0.0-beta.
+Regalia supports Realm's latest version 7.0.0
 
 Based on [Regalia Java](https://github.com/Commit451/Regalia)
 
